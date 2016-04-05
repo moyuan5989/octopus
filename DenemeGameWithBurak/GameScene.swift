@@ -175,11 +175,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Hero textures
         
-        flyherotex1 = SKTexture(imageNamed: "Fly0.png")
+        flyherotex1 = SKTexture(imageNamed: "swim0.png")
         
         
         
-        runherotex1 = SKTexture(imageNamed: "Run0.png")
+        runherotex1 = SKTexture(imageNamed: "run0.png")
         
         
         deadherotex1 = SKTexture(imageNamed: "Dead0.png")
@@ -485,16 +485,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         hero = SKSpriteNode(texture: flyherotex1)
         
-        HeroFlyTexturesArray = [SKTexture(imageNamed: "Fly0"),SKTexture(imageNamed: "Fly1"),SKTexture(imageNamed: "Fly2"),SKTexture(imageNamed: "Fly3"),SKTexture(imageNamed: "Fly4")]
+        HeroFlyTexturesArray = [SKTexture(imageNamed: "swim0"),SKTexture(imageNamed: "swim1"),SKTexture(imageNamed: "swim2"),SKTexture(imageNamed: "swim3"),SKTexture(imageNamed: "swim4"),SKTexture(imageNamed: "swim5"),SKTexture(imageNamed: "swim6"),SKTexture(imageNamed: "swim7")]
         
         let HeroFlyAnimation = SKAction.animateWithTextures(HeroFlyTexturesArray, timePerFrame: 0.1)
         
         hero.position = position
         let flyhero = SKAction.repeatActionForever(HeroFlyAnimation)
         hero.runAction(flyhero)
-        hero.size.height = 84
-        hero.size.width = 120
-        hero.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: hero.size.width - 40 , height: hero.size.height - 30))
+        hero.size.height = 80
+        hero.size.width = 80
+        hero.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: hero.size.width - 20 , height: hero.size.height - 15))
         
         hero.physicsBody?.categoryBitMask = herogroup
         hero.physicsBody?.contactTestBitMask = coingroup | objectgroup | groundgroup|rocketgroup|redCoinGroup|shieldgroup
@@ -527,7 +527,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     {
         
-        tabtoplayLabel.text = "Tap to Fly!!"
+        tabtoplayLabel.text = "Tap to swim!!"
         tabtoplayLabel.position = CGPoint(x: CGRectGetMidX(self.frame) , y: CGRectGetMidY(self.frame))
         tabtoplayLabel.fontSize = 50
         tabtoplayLabel.fontColor = UIColor.whiteColor()
@@ -1627,7 +1627,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 playerEmitter1.hidden = true
 
-                HeroRunTexturesArray = [SKTexture(imageNamed: "Run0"),SKTexture(imageNamed: "Run1"),SKTexture(imageNamed: "Run2"),SKTexture(imageNamed: "Run3"),SKTexture(imageNamed: "Run4"),SKTexture(imageNamed: "Run5"),SKTexture(imageNamed: "Run6")]
+                HeroRunTexturesArray = [SKTexture(imageNamed: "run0"),SKTexture(imageNamed: "run1"),SKTexture(imageNamed: "run2"),SKTexture(imageNamed: "run3"),SKTexture(imageNamed: "run4"),SKTexture(imageNamed: "run5")]
                 
                 let heroRunAnimation = SKAction.animateWithTextures(HeroRunTexturesArray, timePerFrame: 0.1)
                 
@@ -2075,7 +2075,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if  gameover == 0
             {
                 
-                HeroFlyTexturesArray = [SKTexture(imageNamed: "Fly0"),SKTexture(imageNamed: "Fly1"),SKTexture(imageNamed: "Fly2"),SKTexture(imageNamed: "Fly3"),SKTexture(imageNamed: "Fly4")]
+                HeroFlyTexturesArray = [SKTexture(imageNamed: "swim0"),SKTexture(imageNamed: "swim1"),SKTexture(imageNamed: "swim2"),SKTexture(imageNamed: "swim3"),SKTexture(imageNamed: "swim4"),SKTexture(imageNamed: "swim5"),SKTexture(imageNamed: "swim6"),SKTexture(imageNamed: "swim7")]
                 
                 let HeroFlyAnimation = SKAction.animateWithTextures(HeroFlyTexturesArray, timePerFrame: 0.1)
                 

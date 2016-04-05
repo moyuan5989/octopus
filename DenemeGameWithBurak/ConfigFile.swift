@@ -60,12 +60,12 @@ var LeaderBoard_ID = "JetPackChallengeLeaderboard2"
 
 // You can configure when levels will be open with below values.
 
-var level2UnlockValue = 500
-var level3UnlockValue = 1500
-var level4UnlockValue = 2500
-var level5UnlockValue = 3500
-var level6UnlockValue = 4500
-var level7UnlockValue = 5500
+var level2UnlockValue = 5
+var level3UnlockValue = 15
+var level4UnlockValue = 25
+var level5UnlockValue = 35
+var level6UnlockValue = 45
+var level7UnlockValue = 55
 
 
 
