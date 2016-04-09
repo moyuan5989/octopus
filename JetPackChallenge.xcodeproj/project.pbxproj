@@ -609,7 +609,7 @@
 				TargetAttributes = {
 					055DC7121A85007D0049CE4F = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 4JX3Y6J22B;
+						DevelopmentTeam = CV3X8RKHW6;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -887,7 +887,7 @@
 					"$(PROJECT_DIR)/DenemeGameWithBurak/GoogleMobileAdsSdkiOS-6.12.2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "JetPack-Challenge-Premium";
+				PRODUCT_BUNDLE_IDENTIFIER = oct;
 				PRODUCT_NAME = "JetPack-Challenge-Premium";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -920,7 +920,7 @@
 					"$(PROJECT_DIR)/DenemeGameWithBurak/GoogleMobileAdsSdkiOS-6.12.2",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = "JetPack-Challenge-Premium";
+				PRODUCT_BUNDLE_IDENTIFIER = oct;
 				PRODUCT_NAME = "JetPack-Challenge-Premium";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

@@ -39,6 +39,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var MineTexture1 : SKTexture!
     var MineTexture2 : SKTexture!
     
+    var CubeTexture1 : SKTexture!
+    var CubeTexture2 : SKTexture!
+    
+    var DownTexture1 : SKTexture!
+    var DownTexture2 : SKTexture!
     // SKTextures Array for animateWithTextures
     
     var HeroFlyTexturesArray = [SKTexture]()
@@ -75,6 +80,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // Timers
     var TimerAddCoin = NSTimer()
     var TimerAddMine = NSTimer()
+    var TimerAddCube = NSTimer()
+    var TimerAddDown = NSTimer()
+    var TimerAddPlat = NSTimer()
     var TimerAddElectriclighting = NSTimer()
     var TimerRoketAdd = NSTimer()
     var TimerRedCoinAdd = NSTimer()
@@ -127,6 +135,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var shield = SKSpriteNode()
     var Electriclighting = SKSpriteNode()
     var Mine = SKSpriteNode()
+    var Cube = SKSpriteNode()
+    var Down = SKSpriteNode()
     var bg = SKSpriteNode()
     var shielditem = SKSpriteNode()
     var ground = SKSpriteNode()
@@ -201,13 +211,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Mines Textures
         
-//        MineTexture1 = SKTexture(imageNamed: "metalball1.png")
-//        MineTexture2 = SKTexture(imageNamed: "metalball2.png")
-        MineTexture1 = SKTexture(imageNamed: "shell1.png")
-        MineTexture2 = SKTexture(imageNamed: "shell2.png")
+        MineTexture1 = SKTexture(imageNamed: "metalball1.png")
+        MineTexture2 = SKTexture(imageNamed: "metalball2.png")
         
 
+        CubeTexture1 = SKTexture(imageNamed: "ice_cube1.png")
+        CubeTexture2 = SKTexture(imageNamed: "ice_cube1.png")
         
+        DownTexture1 = SKTexture(imageNamed: "ice_cube1.png")
+        DownTexture2 = SKTexture(imageNamed: "ice_cube1.png")
         
         self.physicsWorld.contactDelegate = self
         
@@ -325,6 +337,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     {
         TimerAddCoin.invalidate()
         TimerAddMine.invalidate()
+        TimerAddCube.invalidate()
+        TimerAddDown.invalidate()
+        TimerAddPlat.invalidate()
         TimerAddElectriclighting.invalidate()
         TimerRoketAdd.invalidate()
         TimerRedCoinAdd.invalidate()
@@ -816,6 +831,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     {
         TimerAddCoin.invalidate()
         TimerAddMine.invalidate()
+        TimerAddCube.invalidate()
+        TimerAddDown.invalidate()
+        TimerAddPlat.invalidate()
         TimerAddElectriclighting.invalidate()
         TimerRoketAdd.invalidate()
         TimerRedCoinAdd.invalidate()
@@ -832,8 +850,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         case 0:
             
             TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(4.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
+            TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(6.245, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
+            TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
+            
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(5.234, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
-            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(3.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
+            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(7.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
             
             TimerAddShieldItem = NSTimer.scheduledTimerWithTimeInterval(20.246, target: self, selector: Selector("addShieldItem"), userInfo: nil, repeats: true)
@@ -841,9 +862,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // medium mode
         case 1:
             
-            TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(3.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
+            TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(5.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
+            TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(5.45, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
+            TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(3.65, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(3.234, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
-            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(2.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
+            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(11.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
             TimerAddShieldItem = NSTimer.scheduledTimerWithTimeInterval(30.246, target: self, selector: Selector("addShieldItem"), userInfo: nil, repeats: true)
             
@@ -853,16 +876,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             
             TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(2.945, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
+            TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(5.945, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
+            TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(3.45, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(3.034, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
-            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(2.543, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
+            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(10.543, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
             TimerAddShieldItem = NSTimer.scheduledTimerWithTimeInterval(40.246, target: self, selector: Selector("addShieldItem"), userInfo: nil, repeats: true)
             
             // medium for quick play mode
         default:
-            TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(3.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
+            TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(4.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
+            TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(5.245, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
+            TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(3.245, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(3.234, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
-            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(2.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
+            TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(8.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
             TimerAddShieldItem = NSTimer.scheduledTimerWithTimeInterval(30.246, target: self, selector: Selector("addShieldItem"), userInfo: nil, repeats: true)
             
@@ -915,6 +942,84 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         movingObject.addChild(Mine)
     }
+    
+    
+    func AddCube()
+    {
+        
+        
+        Cube = SKSpriteNode(texture: CubeTexture1)
+        let minesRandom = arc4random() % UInt32(2)
+        if minesRandom == 0
+        {
+            Cube = SKSpriteNode(texture: CubeTexture1)
+        }else
+        {
+            Cube = SKSpriteNode(texture: CubeTexture2)
+            
+        }
+        Cube.size.width = 100
+        Cube.size.height = 200
+        Cube.position = CGPoint(x: self.frame.size.width + 150, y: 570)
+        let moveMayinX = SKAction.moveToX ( -self.frame.size.width / 4 , duration: 4)
+        Cube.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: Cube.size.width - 40 , height: Cube.size.height - 30))
+        
+        Cube.physicsBody?.categoryBitMask = objectgroup
+        
+        Cube.physicsBody?.dynamic = false
+        Cube.physicsBody?.affectedByGravity = true
+        Cube.physicsBody?.allowsRotation = false
+        
+       
+        
+        let removeAction = SKAction.removeFromParent()
+        let dusmanMovebgForever = SKAction.repeatActionForever(SKAction.sequence([moveMayinX,removeAction]))
+        
+        
+        
+//        animations.rotateAnimationsToAngle(Cube, animDuration: 0.2)
+        Cube.runAction(dusmanMovebgForever)
+        Cube.zPosition = 1
+        
+        movingObject.addChild(Cube)
+    }
+    
+    func AddDown()
+    {
+        
+        
+        Down = SKSpriteNode(texture: DownTexture1)
+        let minesRandom = arc4random() % UInt32(2)
+        if minesRandom == 0
+        {
+            Down = SKSpriteNode(texture: DownTexture1)
+        }else
+        {
+            Down = SKSpriteNode(texture: DownTexture2)
+            
+        }
+        Down.size.width = 100
+        Down.size.height = 200
+        Down.position = CGPoint(x: self.frame.size.width + 150, y: 870)
+        let moveMayinX = SKAction.moveToX ( -self.frame.size.width / 4 , duration: 4)
+        Down.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: Down.size.width - 40 , height: Down.size.height - 30))
+        
+        Down.physicsBody?.categoryBitMask = objectgroup
+        
+        Down.physicsBody?.dynamic = true
+        Down.physicsBody?.affectedByGravity = true
+        Down.physicsBody?.allowsRotation = true
+        
+        
+        let removeAction = SKAction.removeFromParent()
+        let dusmanMovebgForever = SKAction.repeatActionForever(SKAction.sequence([moveMayinX,removeAction]))
+        
+        Down.runAction(dusmanMovebgForever)
+        Down.zPosition = 2
+        
+        movingObject.addChild(Down)
+    }
+
     
     
     func RoketAdd()
@@ -1162,6 +1267,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         TimerAddCoin.invalidate()
         TimerAddMine.invalidate()
+        TimerAddCube.invalidate()
+        TimerAddDown.invalidate()
+        TimerAddPlat.invalidate()
         TimerAddElectriclighting.invalidate()
         TimerRoketAdd.invalidate()
         TimerRedCoinAdd.invalidate()
@@ -1233,6 +1341,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         showhighscore()
         TimerAddCoin.invalidate()
         TimerAddMine.invalidate()
+        TimerAddCube.invalidate()
+        TimerAddDown.invalidate()
+        TimerAddPlat.invalidate()
         TimerAddElectriclighting.invalidate()
         TimerRoketAdd.invalidate()
         TimerRedCoinAdd.invalidate()
@@ -1248,9 +1359,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addgameovertext()
     {
         gameoverLabel = SKLabelNode()
-        gameoverLabel.text = "GAME OVER"
+        gameoverLabel.text = "Opps...You die..."
         gameoverLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 100)
-        gameoverLabel.fontSize = 50
+        gameoverLabel.fontSize = 100
         gameoverLabel.fontName = "MarkerFelt-Wide"
         gameoverLabel.fontColor = UIColor.redColor()
         self.addChild(gameoverLabel)
@@ -1323,6 +1434,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 TimerAddCoin.invalidate()
                 TimerAddMine.invalidate()
+                TimerAddCube.invalidate()
+                TimerAddDown.invalidate()
+                TimerAddPlat.invalidate()
                 TimerAddElectriclighting.invalidate()
                 TimerRoketAdd.invalidate()
                 TimerRedCoinAdd.invalidate()
@@ -1388,7 +1502,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     }
                     self.highscoreLabel.hidden = false
                     self.highscoreLabel2.hidden = false
-                    self.GameviewcontrollerBridge.ShareButton.hidden = false
+                    self.GameviewcontrollerBridge.ShareButton.hidden = true
                     self.highscoreLabel.text = "\(Model.sharedInstance.highcore)"
                     
                     
@@ -1487,6 +1601,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     TimerAddCoin.invalidate()
                     TimerAddMine.invalidate()
+                    TimerAddCube.invalidate()
+                    TimerAddDown.invalidate()
+                    TimerAddPlat.invalidate()
                     TimerAddElectriclighting.invalidate()
                     TimerRoketAdd.invalidate()
                     TimerRedCoinAdd.invalidate()
@@ -1494,7 +1611,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     HeroDeathTexturesArray = [SKTexture(imageNamed: "Dead0"),SKTexture(imageNamed: "Dead1"),SKTexture(imageNamed: "Dead2"),SKTexture(imageNamed: "Dead3"),SKTexture(imageNamed: "Dead4"),SKTexture(imageNamed: "Dead5"),SKTexture(imageNamed: "Dead6")]
                     
-                    let herodDeathAnimation = SKAction.animateWithTextures(HeroDeathTexturesArray, timePerFrame: 0.2)
+                    let herodDeathAnimation = SKAction.animateWithTextures(HeroDeathTexturesArray, timePerFrame: 0.5)
                     
                     
                     hero.runAction(herodDeathAnimation)
@@ -1558,7 +1675,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         
                         
                         self.highscoreLabel2.hidden = false
-                        self.GameviewcontrollerBridge.ShareButton.hidden = false
+                        self.GameviewcontrollerBridge.ShareButton.hidden = true
                         self.highscoreLabel.text = "\(Model.sharedInstance.highcore)"
                         Model.sharedInstance.ShieldAddBool = false
                         

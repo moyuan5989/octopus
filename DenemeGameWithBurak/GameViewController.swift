@@ -75,13 +75,13 @@ class GameViewController: UIViewController,SKProductsRequestDelegate,SKPaymentTr
         
         
         LoadingView.hidden = false
-        SwiftSpinner.show("Loading...", animated: true)
+        SwiftSpinner.show("Octopus incoming", animated: false)
         
        
         
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayInterstitial", name: "kDisplayInterstitialNotification", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "displayInterstitial", name: "kDisplayInterstitialNotification", object: nil)
         
         Interstitial = createAndLoadInterstitial()
 
@@ -91,7 +91,7 @@ class GameViewController: UIViewController,SKProductsRequestDelegate,SKPaymentTr
         if NSUserDefaults.standardUserDefaults().objectForKey("AdMobAdShows") != nil
         {
             
-            AdMob_Enabled = NSUserDefaults.standardUserDefaults().objectForKey("AdMobAdShows") as! Bool
+//            AdMob_Enabled = NSUserDefaults.standardUserDefaults().objectForKey("AdMobAdShows") as! Bool
             
         }
         
