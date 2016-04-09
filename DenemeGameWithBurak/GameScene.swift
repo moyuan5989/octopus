@@ -201,8 +201,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Mines Textures
         
-        MineTexture1 = SKTexture(imageNamed: "metalball1.png")
-        MineTexture2 = SKTexture(imageNamed: "metalball2.png")
+//        MineTexture1 = SKTexture(imageNamed: "metalball1.png")
+//        MineTexture2 = SKTexture(imageNamed: "metalball2.png")
+        MineTexture1 = SKTexture(imageNamed: "shell1.png")
+        MineTexture2 = SKTexture(imageNamed: "shell2.png")
         
 
         
