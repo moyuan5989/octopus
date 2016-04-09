@@ -44,6 +44,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var DownTexture1 : SKTexture!
     var DownTexture2 : SKTexture!
+    
+    var PlatTexture1 : SKTexture!
+    var PlatTexture2 : SKTexture!
     // SKTextures Array for animateWithTextures
     
     var HeroFlyTexturesArray = [SKTexture]()
@@ -137,6 +140,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Mine = SKSpriteNode()
     var Cube = SKSpriteNode()
     var Down = SKSpriteNode()
+    var Plat = SKSpriteNode()
     var bg = SKSpriteNode()
     var shielditem = SKSpriteNode()
     var ground = SKSpriteNode()
@@ -221,8 +225,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         DownTexture1 = SKTexture(imageNamed: "ice_cube1.png")
         DownTexture2 = SKTexture(imageNamed: "ice_cube1.png")
         
-        self.physicsWorld.contactDelegate = self
+        PlatTexture1 = SKTexture(imageNamed: "BubbleChain_test.png")
+        PlatTexture2 = SKTexture(imageNamed: "BubbleChain_test.png")
         
+        self.physicsWorld.contactDelegate = self
+        physicsWorld.gravity = CGVector(dx:-0, dy:-5)
         
         createObjects()
      
@@ -491,9 +498,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func createplayerEmitter()
         
     {
-       playerEmitter1 = SKEmitterNode(fileNamed:"engine.sks")!
-        playerEmitterObject.zPosition = 1
-        playerEmitterObject.addChild(playerEmitter1)
+//       playerEmitter1 = SKEmitterNode(fileNamed:"engine.sks")!
+//        playerEmitterObject.zPosition = 1
+//        playerEmitterObject.addChild(playerEmitter1)
         
     }
     
@@ -534,7 +541,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         stageLabel.fontSize = 30
         
         stageLabel.fontColor = UIColor.whiteColor()
-        stageLabel.fontName = "Chalkduster"
+//        stageLabel.fontName = ""
         stageLabel.zPosition = 1
         
         self.addChild(stageLabel)
@@ -548,7 +555,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         tabtoplayLabel.position = CGPoint(x: CGRectGetMidX(self.frame) , y: CGRectGetMidY(self.frame))
         tabtoplayLabel.fontSize = 50
         tabtoplayLabel.fontColor = UIColor.whiteColor()
-        tabtoplayLabel.fontName = "Chalkduster"
+//        tabtoplayLabel.fontName = "Chalkduster"
         tabtoplayLabel.zPosition = 1
         
         self.addChild(tabtoplayLabel)
@@ -558,7 +565,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func addscore()
         
     {
-        scoreLabel.fontName = "Chalkduster"
+//        scoreLabel.fontName = "Chalkduster"
         scoreLabel.text = "0"
         scoreLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMaxY(self.frame) - 200)
         scoreLabel.fontSize = 60
@@ -574,7 +581,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     {
         highscoreLabel2.position = CGPoint(x: CGRectGetMaxX(self.frame) - 100, y: CGRectGetMaxY(self.frame) - 150)
         highscoreLabel2.fontSize = 30
-        highscoreLabel2.fontName = "Chalkduster"
+//        highscoreLabel2.fontName = "Chalkduster"
         highscoreLabel2.fontColor = UIColor.whiteColor()
         highscoreLabel2.text = "HighScore"
         highscoreLabel2.zPosition = 1
@@ -590,7 +597,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         highscoreLabel = SKLabelNode()
         highscoreLabel.position = CGPoint(x: CGRectGetMaxX(self.frame) - 100, y: CGRectGetMaxY(self.frame) - 210)
         highscoreLabel.fontSize = 50
-        highscoreLabel.fontName = "Chalkduster"
+//        highscoreLabel.fontName = "Chalkduster"
         highscoreLabel.fontColor = UIColor.whiteColor()
         highscoreLabel.hidden = true
         highscoreLabel.zPosition = 1
@@ -607,7 +614,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let heroooo = hero
         
-        addHero(heroooo, atPosition: CGPoint(x: self.size.width/4, y: 0 + flyherotex1.size().height + 400))
+        addHero(heroooo, atPosition: CGPoint(x: self.size.width/4, y: 0 + flyherotex1.size().height + 100))
     }
     
     
@@ -839,7 +846,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         TimerRedCoinAdd.invalidate()
         TimerAddShieldItem.invalidate()
         
-        TimerAddCoin = NSTimer.scheduledTimerWithTimeInterval(2.62, target: self, selector: Selector("addcoin"), userInfo: nil, repeats: true)
+        TimerAddCoin = NSTimer.scheduledTimerWithTimeInterval(0.52, target: self, selector: Selector("addcoin"), userInfo: nil, repeats: true)
         TimerRedCoinAdd = NSTimer.scheduledTimerWithTimeInterval(8.246, target: self, selector: Selector("redCoinAdd"), userInfo: nil, repeats: true)
         
         
@@ -852,6 +859,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(4.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
             TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(6.245, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
             TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
+            TimerAddPlat = NSTimer.scheduledTimerWithTimeInterval(4.5, target: self, selector: Selector("AddPlat"), userInfo: nil, repeats: true)
             
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(5.234, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
             TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(7.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
@@ -865,6 +873,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(5.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
             TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(5.45, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
             TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(3.65, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
+            TimerAddPlat = NSTimer.scheduledTimerWithTimeInterval(3.65, target: self, selector: Selector("AddPlat"), userInfo: nil, repeats: true)
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(3.234, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
             TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(11.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
@@ -878,6 +887,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(2.945, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
             TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(5.945, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
             TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(3.45, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
+            TimerAddPlat = NSTimer.scheduledTimerWithTimeInterval(3.45, target: self, selector: Selector("AddPlat"), userInfo: nil, repeats: true)
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(3.034, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
             TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(10.543, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
@@ -888,6 +898,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             TimerAddMine = NSTimer.scheduledTimerWithTimeInterval(4.245, target: self, selector: Selector("AddMine"), userInfo: nil, repeats: true)
             TimerAddCube = NSTimer.scheduledTimerWithTimeInterval(5.245, target: self, selector: Selector("AddCube"), userInfo: nil, repeats: true)
             TimerAddDown = NSTimer.scheduledTimerWithTimeInterval(3.245, target: self, selector: Selector("AddDown"), userInfo: nil, repeats: true)
+            TimerAddPlat = NSTimer.scheduledTimerWithTimeInterval(3.245, target: self, selector: Selector("AddPlat"), userInfo: nil, repeats: true)
             TimerAddElectriclighting = NSTimer.scheduledTimerWithTimeInterval(3.234, target: self, selector: Selector("AddElectriclighting"), userInfo: nil, repeats: true)
             TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(8.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
@@ -1019,6 +1030,50 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         movingObject.addChild(Down)
     }
+
+    
+    
+    
+    func AddPlat()
+    {
+        
+        
+        Plat = SKSpriteNode(texture: PlatTexture1)
+        let minesRandom = arc4random() % UInt32(2)
+        if minesRandom == 0
+        {
+            Plat = SKSpriteNode(texture: PlatTexture1)
+        }else
+        {
+            Plat = SKSpriteNode(texture: PlatTexture2)
+            
+        }
+        Plat.size.width = 200
+        Plat.size.height = 40
+        Plat.position = CGPoint(x: self.frame.size.width + 0, y: 270)
+        let moveMayinX = SKAction.moveToX ( -self.frame.size.width / 2 , duration: 4)
+        Plat.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: Plat.size.width - 40 , height: Plat.size.height - 30))
+        
+        Plat.physicsBody?.categoryBitMask = objectgroup
+        
+        Plat.physicsBody?.dynamic = false
+        Plat.physicsBody?.affectedByGravity = false
+        Plat.physicsBody?.allowsRotation = false
+        
+        
+        
+        let removeAction = SKAction.removeFromParent()
+        let dusmanMovebgForever = SKAction.repeatActionForever(SKAction.sequence([moveMayinX,removeAction]))
+        
+        
+        
+        //        animations.rotateAnimationsToAngle(Cube, animDuration: 0.2)
+        Cube.runAction(dusmanMovebgForever)
+        Cube.zPosition = 1
+        
+        movingObject.addChild(Plat)
+    }
+    
 
     
     
@@ -1361,8 +1416,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         gameoverLabel = SKLabelNode()
         gameoverLabel.text = "Opps...You die..."
         gameoverLabel.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame) + 100)
-        gameoverLabel.fontSize = 100
-        gameoverLabel.fontName = "MarkerFelt-Wide"
+        gameoverLabel.fontSize = 200
+//        gameoverLabel.fontName = "MarkerFelt-Wide"
         gameoverLabel.fontColor = UIColor.redColor()
         self.addChild(gameoverLabel)
     }
