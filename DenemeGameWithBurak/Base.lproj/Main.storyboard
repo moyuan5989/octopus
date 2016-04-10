@@ -173,7 +173,7 @@
                                     <action selector="goToGameCenter:" destination="Aia-E1-hHP" eventType="touchUpInside" id="p8N-3q-ALK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2C-ZU-NXZ">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m2C-ZU-NXZ">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="m2C-ZU-NXZ" secondAttribute="height" multiplier="80:77" id="R29-rh-jei"/>
@@ -201,7 +201,7 @@
                                     <action selector="GoInfoPage:" destination="Aia-E1-hHP" eventType="touchUpInside" id="axQ-Al-y58"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POL-mJ-3kb" userLabel="RateBtn">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POL-mJ-3kb" userLabel="RateBtn">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="MrW-s7-BGa"/>
