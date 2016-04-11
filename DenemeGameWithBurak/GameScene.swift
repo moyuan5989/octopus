@@ -403,7 +403,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         runAction(ShieldOnPreload)
             
         }
-        shield.zPosition = 1
+        
+        
+        let movementAmount = arc4random() % UInt32(self.frame.size.height / 2)
+        
+        let pipeOffset = CGFloat(movementAmount) - self.frame.size.height / 4
+        shield.position = CGPoint(x: self.size.width - 50, y: 0 + shieldItemTexture.size().height + self.size.height/2 + pipeOffset)
+        shield.zPosition = 1.1
         shieldObject.addChild(shield)
         
     }
@@ -426,7 +432,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         shielditem.runAction(dusmanMovebgForever)
         
-        animations.scaleZdirection(shielditem)
+//        animations.scaleZdirection(shielditem)
         shielditem.setScale(1.1)
         
         shielditem.physicsBody?.dynamic = false
@@ -865,7 +871,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             TimerRoketAdd = NSTimer.scheduledTimerWithTimeInterval(7.743, target: self, selector: Selector("RoketAdd"), userInfo: nil, repeats: true)
             
             
-            TimerAddShieldItem = NSTimer.scheduledTimerWithTimeInterval(20.246, target: self, selector: Selector("addShieldItem"), userInfo: nil, repeats: true)
+            TimerAddShieldItem = NSTimer.scheduledTimerWithTimeInterval(2.246, target: self, selector: Selector("addShieldItem"), userInfo: nil, repeats: true)
             
             // medium mode
         case 1:

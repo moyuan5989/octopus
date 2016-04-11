@@ -74,8 +74,8 @@ class GameViewController: UIViewController,SKProductsRequestDelegate,SKPaymentTr
        
         
         
-        LoadingView.hidden = false
-        SwiftSpinner.show("Octopus incoming", animated: false)
+        LoadingView.hidden = true
+//        SwiftSpinner.show("Octopus incoming", animated: false)
         
        
         

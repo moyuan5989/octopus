@@ -1021,7 +1021,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMu-by-Clv" userLabel="Back">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="100" y="100" width="146" height="130"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="113" id="81O-Im-bNQ">
                                         <variation key="heightClass=compact" constant="60"/>

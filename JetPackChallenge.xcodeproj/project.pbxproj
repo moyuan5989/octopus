@@ -21,7 +21,6 @@
 		05883E201AAF32960048F0D3 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 05883E1E1AAF32960048F0D3 /* spark.png */; };
 		05A2CAC81C10D8F500134EEB /* RocketCreate.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05A2CAC61C10D8F500134EEB /* RocketCreate.wav */; };
 		05A2CACB1C10D91A00134EEB /* RocketExplosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05A2CACA1C10D91A00134EEB /* RocketExplosion.wav */; };
-		05A2CAD01C10FD8B00134EEB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B37EFB21C101A6600B130EC /* StoreKit.framework */; };
 		05A2CAD31C11094600134EEB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A2CAD21C11094600134EEB /* AdSupport.framework */; };
 		05A2CAD51C11095B00134EEB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A2CAD41C11095B00134EEB /* AVFoundation.framework */; };
 		05A2CAD71C11096900134EEB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A2CAD61C11096900134EEB /* CoreMedia.framework */; };
@@ -43,7 +42,6 @@
 		05B9A2231ADC6C3F00ACD6E3 /* InfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9A2221ADC6C3F00ACD6E3 /* InfoPageViewController.swift */; };
 		05BD42CA1C179FCA00A82858 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BD42C91C179FCA00A82858 /* SwiftSpinner.swift */; };
 		05BD42CF1C17ABEA00A82858 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 05BD42CC1C17ABEA00A82858 /* back.png */; };
-		05C328381AC2D61300BF29F9 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05C328371AC2D61300BF29F9 /* GameKit.framework */; };
 		05D125D21C17CAF3009C4550 /* ConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D125D11C17CAF3009C4550 /* ConfigFile.swift */; };
 		05D125D41C17D221009C4550 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D125D31C17D221009C4550 /* SweetAlert.swift */; };
 		05D7DE651A98237B00C9A051 /* PickCoin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 05D7DE641A98237B00C9A051 /* PickCoin.mp3 */; };
@@ -169,7 +167,6 @@
 		05B9A2221ADC6C3F00ACD6E3 /* InfoPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoPageViewController.swift; sourceTree = "<group>"; };
 		05BD42C91C179FCA00A82858 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		05BD42CC1C17ABEA00A82858 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		05C328371AC2D61300BF29F9 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		05D125D11C17CAF3009C4550 /* ConfigFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigFile.swift; sourceTree = "<group>"; };
 		05D125D31C17D221009C4550 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		05D7DE641A98237B00C9A051 /* PickCoin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PickCoin.mp3; sourceTree = "<group>"; };
@@ -203,7 +200,6 @@
 		6B37EFAC1C101A4E00B130EC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6B37EFAE1C101A5500B130EC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6B37EFB01C101A5F00B130EC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		6B37EFB21C101A6600B130EC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		6B37EFB41C101A6C00B130EC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6B37EFB61C101A7700B130EC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		6B37EFB81C101A8100B130EC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -271,7 +267,6 @@
 				05A2CAD51C11095B00134EEB /* AVFoundation.framework in Frameworks */,
 				6B37EFA71C101A3800B130EC /* AudioToolbox.framework in Frameworks */,
 				05A2CAD31C11094600134EEB /* AdSupport.framework in Frameworks */,
-				05A2CAD01C10FD8B00134EEB /* StoreKit.framework in Frameworks */,
 				05FD13D71AC4958900FC7E3B /* Social.framework in Frameworks */,
 				6B37EFC11C101B1C00B130EC /* Accounts.framework in Frameworks */,
 				6B37EFBF1C101B0E00B130EC /* libsqlite3.tbd in Frameworks */,
@@ -287,7 +282,6 @@
 				6B37EFA11C101A2700B130EC /* Parse.framework in Frameworks */,
 				05B6E26B1C19F85B00E42C12 /* GoogleMobileAds.framework in Frameworks */,
 				6B37EFA51C101A2700B130EC /* ParseUI.framework in Frameworks */,
-				05C328381AC2D61300BF29F9 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +351,6 @@
 				6B37EFBC1C101AFA00B130EC /* libz.1.tbd */,
 				6B37EFB61C101A7700B130EC /* libz.tbd */,
 				6B37EFB41C101A6C00B130EC /* SystemConfiguration.framework */,
-				6B37EFB21C101A6600B130EC /* StoreKit.framework */,
 				6B37EFB01C101A5F00B130EC /* Security.framework */,
 				6B37EFAE1C101A5500B130EC /* QuartzCore.framework */,
 				6B37EFAC1C101A4E00B130EC /* CoreLocation.framework */,
@@ -365,7 +358,6 @@
 				6B37EFA81C101A4000B130EC /* CFNetwork.framework */,
 				6B37EFA61C101A3800B130EC /* AudioToolbox.framework */,
 				05FD13D61AC4958900FC7E3B /* Social.framework */,
-				05C328371AC2D61300BF29F9 /* GameKit.framework */,
 				6B37EF9A1C101A2700B130EC /* Bolts.framework */,
 				6B37EF9B1C101A2700B130EC /* Parse.framework */,
 				6B37EF9F1C101A2700B130EC /* ParseUI.framework */,
@@ -615,10 +607,10 @@
 								enabled = 1;
 							};
 							com.apple.GameCenter = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
